@@ -1,0 +1,29 @@
+:root {
+  background: #eef4f0;
+  color: #273530;
+  font-family: Avenir Next, Avenir, Segoe UI, sans-serif;
+  font-synthesis: none;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(33, 122, 94, 0.18), transparent 32rem),
+    linear-gradient(135deg, #f6faf8 0%, #e7f0ea 48%, #f3f0e4 100%);
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
