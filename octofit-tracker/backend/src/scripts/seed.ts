@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import Activity from '../models/Activity';
 
 const connectionString = process.env.MONGODB_URI || 'mongodb://localhost:27017/octofit_db';
 
@@ -11,7 +12,20 @@ async function seedDatabase() {
 
     console.log('Connected to octofit_db');
 
-    // TODO: Add seed data for users, teams, activities, leaderboard, and workouts
+    // Seed activities
+    await Activity.deleteMany({});
+    await Activity.insertMany([
+      {
+        name: 'Manga Maniacs',
+        description:
+          'Explore the fantastic stories of the most interesting characters from Japanese Manga (graphic novels).',
+        schedule: 'Tuesdays at 7pm',
+        max_attendance: 15,
+      },
+    ]);
+    console.log('Activities seeded');
+
+    // TODO: Add seed data for users, teams, leaderboard, and workouts
 
     console.log('Database seeding complete');
     await mongoose.disconnect();
