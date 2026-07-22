@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import { fetchCollection } from '../api.js'
 
-const endpointPath = '/api/teams/'
+const endpointPath = import.meta.env.VITE_CODESPACE_NAME
+  ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/teams/`
+  : '/api/teams/'
 
 function Teams() {
   const [teams, setTeams] = useState([])

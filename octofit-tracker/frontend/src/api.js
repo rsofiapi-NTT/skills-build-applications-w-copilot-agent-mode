@@ -34,7 +34,9 @@ export function collectionFromResponse(payload) {
 }
 
 export async function fetchCollection(endpointPath) {
-  const requestUrl = endpointPath.startsWith('/api/')
+  const requestUrl = endpointPath.startsWith('http')
+    ? endpointPath
+    : endpointPath.startsWith('/api/')
     ? `${apiHostUrl}${endpointPath}`
     : `${apiBaseUrl}/${endpointPath}/`
   const response = await fetch(requestUrl)
