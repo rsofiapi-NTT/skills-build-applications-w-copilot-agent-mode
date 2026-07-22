@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { fetchCollection } from '../api.js'
 
+const endpointPath = '/api/users/'
+
 function Users() {
   const [users, setUsers] = useState([])
   const [status, setStatus] = useState('loading')
@@ -9,7 +11,7 @@ function Users() {
   useEffect(() => {
     let ignore = false
 
-    fetchCollection('users')
+    fetchCollection(endpointPath)
       .then((data) => {
         if (!ignore) {
           setUsers(data)
