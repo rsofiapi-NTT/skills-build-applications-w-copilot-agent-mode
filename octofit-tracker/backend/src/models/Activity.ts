@@ -4,7 +4,7 @@ export interface IActivity extends Document {
   name: string;
   description: string;
   schedule: string;
-  max_attendance: number;
+  maxAttendance: number;
 }
 
 const ActivitySchema: Schema = new Schema(
@@ -12,7 +12,7 @@ const ActivitySchema: Schema = new Schema(
     name: { type: String, required: true },
     description: { type: String, required: true },
     schedule: { type: String, required: true },
-    max_attendance: { type: Number, required: true },
+    maxAttendance: { type: Number, required: true },
   },
   { timestamps: true }
 );

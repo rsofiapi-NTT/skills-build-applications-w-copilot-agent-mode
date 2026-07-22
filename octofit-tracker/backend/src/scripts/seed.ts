@@ -20,7 +20,7 @@ async function seedDatabase() {
         description:
           'Explore the fantastic stories of the most interesting characters from Japanese Manga (graphic novels).',
         schedule: 'Tuesdays at 7pm',
-        max_attendance: 15,
+        maxAttendance: 15,
       },
     ]);
     console.log('Activities seeded');
